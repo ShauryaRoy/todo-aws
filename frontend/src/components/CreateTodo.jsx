@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function CreateTodo() {
+export function CreateTodo({refresh,setRefresh}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   console.log(title);
@@ -40,7 +40,7 @@ export function CreateTodo() {
             alert("Todo added");
             setTitle("");
             setDescription("");
-            
+            setRefresh(!refresh);
           });
           
         }}

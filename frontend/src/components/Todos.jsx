@@ -7,7 +7,7 @@
 import { Update } from "./Update";
 
 // ]
-export function Todos({ todos }) {
+export function Todos({ todos,refresh,setRefresh }) {
   return (
     <div>
       {todos.map(function (todo) {
@@ -27,6 +27,7 @@ export function Todos({ todos }) {
               }).then(async function (res) {
                 const json = await res.json();
                 alert("Todo marked as completed");
+                setRefresh(!refresh);
               });
             }} >
               {todo.completed == true ? "Completed" : "Mark as Complete"}
@@ -43,6 +44,7 @@ export function Todos({ todos }) {
               }).then(async function (res) {
                 const json = await res.json();
                 alert("Todo deleted");
+                setRefresh(!refresh);
               });
             }}>Delete</button>
             {/* <Update></Update> */}
