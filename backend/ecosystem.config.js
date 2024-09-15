@@ -1,7 +1,7 @@
 module.exports = {
     app: [
         {
-            name: 'app',
+            name: 'todo-aws',
             script: "npm",
             args: "run dev",
             env: {
