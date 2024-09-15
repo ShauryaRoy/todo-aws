@@ -89,11 +89,11 @@ app.put("/completed", async (req, res) => {
 app.delete("/delete", async (req, res) => {
   const deletePayload = req.body;
   await todo.deleteOne({
-    _id: deletePayload.id, 
+    _id: deletePayload.id,
   });
   res.json({ msg: "Todo deleted successfully" });
-  })
+})
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Example app listening on port ${port}`);
 });
